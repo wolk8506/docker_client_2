@@ -30,12 +30,13 @@ export default function UserMenu() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const { SERVER } = process.env;
 
   useEffect(() => {
     if (avatar.slice(0, 6) === 'public') {
-      setAvatarUrl(`http://localhost:4500/${avatar.slice(7)}`);
+      setAvatarUrl(`${SERVER}${avatar.slice(7)}`);
     } else setAvatarUrl(avatar);
-  }, [avatar]);
+  }, [SERVER, avatar]);
 
   const UploadContent = e => {
     e.preventDefault();
