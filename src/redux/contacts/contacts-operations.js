@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+const { SERVER } = process.env;
 
-axios.defaults.baseURL = 'http://localhost:4500/api';
+axios.defaults.baseURL = `${SERVER}api`;
 
 export const fetchContact = createAsyncThunk(
   'contacts/fetchContact',
