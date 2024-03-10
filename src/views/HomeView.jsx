@@ -8,6 +8,7 @@ const HomeView = () => (
     <img src={logo} alt="book" width={300} />
     <h1 className={s.subTitle}>Phone book</h1>
     <h2 className={s.subTitle}>feature #2</h2>
+
   </div>
 );
 
